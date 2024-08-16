@@ -11,7 +11,7 @@
   "parameters": {
     "workloadName": {
       "type": "string",
-      "defaultValue": "[format('appsvc{0}', take(uniqueString(subscription().id), 4))]",
+      "defaultValue": "LZA",
       "maxLength": 10,
       "metadata": {
         "description": "suffix (max 10 characters long) that will be used to name the resources in a pattern like <resourceAbbreviation>-<workloadName>"
@@ -19,14 +19,14 @@
     },
     "location": {
       "type": "string",
-      "defaultValue": "[deployment().location]",
+      "defaultValue": "eastus",
       "metadata": {
         "description": "Azure region where the resources will be deployed in"
       }
     },
     "environmentName": {
       "type": "string",
-      "defaultValue": "test",
+      "defaultValue": "prod",
       "maxLength": 8,
       "metadata": {
         "description": "Required. The name of the environmentName (e.g. \"dev\", \"test\", \"prod\", \"preprod\", \"staging\", \"uat\", \"dr\", \"qa\"). Up to 8 characters long."
@@ -125,7 +125,7 @@
     },
     "webAppPlanSku": {
       "type": "string",
-      "defaultValue": "S1",
+      "defaultValue": "S2",
       "allowedValues": [
         "S1",
         "S2",
@@ -170,6 +170,7 @@
     },
     "adminPassword": {
       "type": "securestring",
+      "defaultValue": "Password.1!!",
       "metadata": {
         "description": "mandatory, the password of the admin user of the jumpbox VM "
       }
